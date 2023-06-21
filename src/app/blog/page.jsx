@@ -4,8 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 
 // data fetching from our api
+const production = {
+  url: 'https://blog-bee.vercel.app/'
+};
+const development = {
+  url: 'http://localhost:3000'
+};
+const config = process.env.NODE_ENV === 'development' ? development : production;
+const url = config.url;
+
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/posts", {
+  const res = await fetch(`${url}/api/posts`, {
     cache: "no-store",
   });
 
