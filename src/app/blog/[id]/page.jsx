@@ -3,18 +3,18 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-const production = {
-  url: 'https://blog-bee.vercel.app/'
-};
-const development = {
-  url: 'http://localhost:3000'
-};
-const config = process.env.NODE_ENV === 'development' ? development : production;
-const url = config.url;
+// const production = {
+//   url: 'https://blog-bee.vercel.app/'
+// };
+// const development = {
+//   url: 'http://localhost:3000'
+// };
+// const config = process.env.NODE_ENV === 'development' ? development : production;
+// const url = config.url;
 
 
 async function getData(id) {
-  const res = await fetch(`${url}/api/posts/${id}`, {
+  const res = await fetch('https://blog-bee.vercel.app/api/posts/${id}', {
     cache: "no-store",
   });
 

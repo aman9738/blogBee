@@ -1,5 +1,5 @@
 export const items = {
-  application: [
+  applications: [
     {
       id: 1,
       title: "Creative Portfolio",
